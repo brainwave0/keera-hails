@@ -41,7 +41,7 @@ main = do
 
   let haddockArgs = [ "--no-warnings" ] ++ files
   let cabalArgs   = [ "exec", "--", "haddock" ] ++ haddockArgs
-  (code, out, _err) <- readProcessWithExitCode "cabal" cabalArgs ""
+  (code, out, _err) <- readProcessWithExitCode "haddock" files ""
 
   -- Filter out coverage lines, and find those that denote undocumented
   -- modules.
